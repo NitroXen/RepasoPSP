@@ -24,7 +24,5 @@ public class Main {
                 new Empleado(""+(i<cuandoLlegaElJefe?i:i-1), o).start();
             }
         }
-        
-        
     }
 }
