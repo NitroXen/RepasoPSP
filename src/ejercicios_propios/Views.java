@@ -44,4 +44,32 @@ public class Views {
         return rand.nextInt(6)+1;
     }
     
+    public static void mensajes(){
+        System.out.println("Bienvenidos al maravilloso mundo de tu mente"
+                + "\ndonde nada es real y todo es estupido."
+                + "\n\nTe encuentras en una habitacion donde solo hay 4 paredes, una cama"
+                + "\ny una puerta(Tiras el dado y si da par abres la puerta y si no, te quedas aqui).");
+    }
+    
+    public static void contMensaje(int i){
+        if(i%2==0){
+            System.out.println("Decides abrir la puerta, donde hay maravillas por doquier y mundos por descubrir,"
+                    + "\nEste es tu comienzo, el fin del principio, donde iras a donde quieras y tendras muchos"
+                    + "\namigos y aliados con los que estar, este es el origen");
+        }else{
+            System.out.println("Decides quedarte dentro, resguardado del exterior, pero descubres debajo de tu cama"
+                    + "\nun juego de mesa que por alguna razon aparente, esta conectado con otros juegos de mesa, dando"
+                    + "\na conocer a los jugadores de un juego grupal a distancia. Vivivras aventuras epicas dentro de tu"
+                    + "\ncasa y algun día, te reuniras con tus amigos del juego, este es el origen");
+        }
+        
+        System.out.println("\nEsto es:"
+                + "\n||====  ||  ||\\\\    ||  ||   =======   ========  ||=======  ||=====   ||=====   ||=====||"
+                + "\n||      ||  || \\\\   ||  ||   ((           ||     ||         ||    ||  ||    ||  ||     ||"
+                + "\n||====  ||  ||  \\\\  ||  ||   =======      ||     ||=======  ||=====   ||=====   ||=====||"
+                + "\n||      ||  ||   \\\\ ||  ||        ))      ||     ||         || ((     || ((     ||     ||"
+                + "\n||      ||  ||    \\\\||  ||   =======      ||     ||=======  ||  ((    ||  ((    ||     ||");
+    }
+    
+    
 }

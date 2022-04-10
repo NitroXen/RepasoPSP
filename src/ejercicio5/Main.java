@@ -11,9 +11,9 @@ package ejercicio5;
  */
 public class Main {
     public static void main(String[] args) {
-        
-        int NUM_COCHES = 40;
-        Aparcamiento a = new Aparcamiento(10);
+        int NUM_PLAZAS = 12;
+        int NUM_COCHES = 100;
+        Aparcamiento a = new Aparcamiento(NUM_PLAZAS);
         Coche[] c = new Coche[NUM_COCHES];
         for(int i =0;i<NUM_COCHES;i++){
             c[i] = new Coche(""+(i+1), a);
@@ -22,6 +22,6 @@ public class Main {
         for(Coche car : c){
             try{car.join();}catch(InterruptedException ex){}
         }
-        System.out.println("\n fin de la simulacion");
+        System.out.println("\nfin de la simulacion");
     }
 }
