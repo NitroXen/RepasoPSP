@@ -29,6 +29,10 @@ public class Plaza {
         
     }
     
+    public boolean estaLibre(){
+        return c == null;
+    }
+    
     public Coche getCoche(){
         return c;
     }

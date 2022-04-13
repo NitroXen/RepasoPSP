@@ -23,7 +23,7 @@ public class Aparcamiento {
     
     public Plaza getPlaza(){
         for(Plaza p: plazas){
-            if(p.getCoche()==null){
+            if(p.estaLibre()){
                 return p;
             }
         }
