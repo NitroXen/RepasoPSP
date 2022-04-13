@@ -10,36 +10,32 @@ package ejercicio5;
  * @author Admin
  */
 public class Plaza {
-    static int countPlazas = 0;
     
-    private int numPlaza;
-    Coche cocheAparcado = null;
+    private static int num = 0;
+    private Coche c;
     
     public Plaza(){
-        numPlaza = ++countPlazas;
+        num++;
+    }
+    
+    public void inCoche(Coche c){
+        this.c = c;
+        System.out.println(c+">>"+this);
+    }
+    
+    public void outCoche(){
+        System.out.println(this+">>"+c);
+        c = null;
+        
     }
     
     public Coche getCoche(){
-        return cocheAparcado;
+        return c;
     }
     
-    public void aparcarCoche(Coche c){
-        cocheAparcado = c;
-        System.out.println(c + " > "+this);
-    }
-    
-    public void adiosCoche(){
-        System.out.println(this+" Libre > "+cocheAparcado);
-        cocheAparcado = null;
-    }
-    
-    public boolean estaLibre(){
-        return cocheAparcado == null;
-    }
-    
-    @Override
     public String toString(){
-        return "P"+numPlaza;
+        return "P"+num;
     }
+    
     
 }

@@ -10,44 +10,43 @@ package ejercicio5;
  * @author Admin
  */
 public class Aparcamiento {
-    private final int NUM_PLAZAS;
-    
+   
     private Plaza[] plazas;
     
     public Aparcamiento(int numPlazas){
-        this.NUM_PLAZAS= numPlazas;
         plazas = new Plaza[numPlazas];
-        for(int i = 0; i<plazas.length; i++){
+        
+        for(int i = 0; i<numPlazas;i++){
             plazas[i] = new Plaza();
         }
     }
     
-    public Plaza getPlazaLibre(){
+    public Plaza getPlaza(){
         for(Plaza p: plazas){
-            if(p.estaLibre()){
+            if(p.getCoche()==null){
                 return p;
             }
         }
         return null;
     }
     
-    public synchronized void aparcar(Coche c){
+    public synchronized void entraCoche(Coche c){
         Plaza plazaLibre;
-        while((plazaLibre = getPlazaLibre())==null){
+        while((plazaLibre = getPlaza())==null){
             try{wait();}catch(InterruptedException ex){}
         }
-        plazaLibre.aparcarCoche(c);
+        plazaLibre.inCoche(c);
     }
     
-    public synchronized void salir(Coche c){
-        for(Plaza p : plazas){
-            if(p.getCoche()== c){
-                p.adiosCoche();
-                break;
+    public synchronized void saleCoche(Coche c){
+        notify();
+        for(Plaza p:plazas){
+            if(p.getCoche()==c){
+                p.outCoche();
             }
         }
-        notifyAll();
     }
+    
     
     
 }

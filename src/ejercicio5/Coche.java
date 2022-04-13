@@ -11,26 +11,27 @@ import java.util.Random;
  *
  * @author Admin
  */
-public class Coche extends Thread{
+public class Coche extends Thread {
     
-    Aparcamiento aparcamiento;
     
-    public Coche(String nombre, Aparcamiento aparcamiento)
-    {
-        super(nombre);
-        this.aparcamiento = aparcamiento;
+    private Aparcamiento aparcamiento;
+    
+    public Coche(String nombre, Aparcamiento aparcamiento){
+        super.setName(nombre);
+        this.aparcamiento= aparcamiento;
     }
+    
+    
+    @Override
+    public void run(){
+        aparcamiento.entraCoche(this);
+        try{Thread.sleep(new Random().nextInt(500)+1);}catch(InterruptedException ex){}
+        aparcamiento.saleCoche(this);
+    }
+    
     
     @Override
     public String toString(){
         return "C"+getName();
     }
-    
-    @Override
-    public void run(){
-        aparcamiento.aparcar(this);
-        try{Thread.sleep(new Random().nextInt(100)+1);}catch(InterruptedException ex){}
-        aparcamiento.salir(this);
-    }
-    
 }
