@@ -11,11 +11,11 @@ package ejercicio5;
  */
 public class Plaza {
     
-    private static int num = 0;
+    private static int cuenta = 0;
     private Coche c;
-    
+    private int num;
     public Plaza(){
-        num++;
+        num=cuenta++;
     }
     
     public void inCoche(Coche c){
