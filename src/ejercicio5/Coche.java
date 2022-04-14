@@ -13,15 +13,18 @@ import java.util.Random;
  */
 public class Coche extends Thread {
     
-    
+    //Usaremos la clase aparcamiento para su uso de entrada y salida
     private Aparcamiento aparcamiento;
     
+    
+    //inicializamos con el contructor
     public Coche(String nombre, Aparcamiento aparcamiento){
         super.setName(nombre);
         this.aparcamiento= aparcamiento;
     }
     
     
+    //el metodo run sobrecargado de Thread hace que entre un coche, pase un tiempo y salga
     @Override
     public void run(){
         aparcamiento.entraCoche(this);

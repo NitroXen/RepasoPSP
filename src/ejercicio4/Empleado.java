@@ -13,12 +13,14 @@ public class Empleado extends Persona {
 
     private Oficina off;
     
+    //el constructor del empleado
     public Empleado(String nombre, Oficina off){
         super(nombre);
         this.off = off;
     }
     
 
+    //el metodo sobrecargado aCurrar de Personal
     @Override
     public void aCurrar() {
         off.saludoEmpleado(this);

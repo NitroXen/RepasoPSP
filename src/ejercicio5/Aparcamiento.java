@@ -11,6 +11,7 @@ package ejercicio5;
  */
 public class Aparcamiento {
    
+    //Creamos un numero definido por el Main para crear un grupo de Plazas
     private Plaza[] plazas;
     
     public Aparcamiento(int numPlazas){
@@ -21,6 +22,7 @@ public class Aparcamiento {
         }
     }
     
+    //Un paseo por el array para comprobar si hay alguna plaza libre
     public Plaza getPlaza(){
         for(Plaza p: plazas){
             if(p.estaLibre()){
@@ -30,6 +32,7 @@ public class Aparcamiento {
         return null;
     }
     
+    //metodo sincronizado para que entre el coche
     public synchronized void entraCoche(Coche c){
         Plaza plazaLibre;
         while((plazaLibre = getPlaza())==null){
@@ -38,6 +41,7 @@ public class Aparcamiento {
         plazaLibre.inCoche(c);
     }
     
+    //metodo sincronizado para que salga el coche
     public synchronized void saleCoche(Coche c){
         notify();
         for(Plaza p:plazas){

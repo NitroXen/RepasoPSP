@@ -11,17 +11,22 @@ package ejercicio4;
  */
 public abstract class Persona extends Thread {
     
+    //constructor abstracto para crear personal de la oficina 
     public Persona(String nombre){
         super.setName(nombre);
     }
     
+    
+    //nos dice el nombre
     public String getNombre(){
         return getName();
     }
 
+    //un metodo abstracto para el run
     public abstract void aCurrar();
 
-
+    
+    //el metodo Run donde lo que modificaremos sera el aCurrar
     @Override
     public void run(){
         aCurrar();

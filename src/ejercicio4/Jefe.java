@@ -13,11 +13,13 @@ public class Jefe extends Persona {
 
     private Oficina off;
     
+    //el constructor de Jefe
     public Jefe(String nombre, Oficina off){
         super(nombre);
         this.off=off;
     }
     
+    //el metodo sobreescrito de Persona
     @Override
     public void aCurrar() {
         off.saludoJefe(this);

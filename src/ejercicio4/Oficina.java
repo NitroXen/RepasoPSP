@@ -11,9 +11,11 @@ package ejercicio4;
  */
 public class Oficina {
     
-    
+    //este atributo nos dice si llego el jefe
     private boolean llegada = false;
     
+    
+    //los saludos de los empleados (si no ha llegado el jefe se ponen a dormir, si no se despiertan)
     public synchronized void saludoEmpleado(Persona p){
         System.out.println(p.getNombre()+" Ha llegado");
         if(!llegada){
@@ -26,6 +28,7 @@ public class Oficina {
         
     }
     
+    //cuando llega el jefe los saluda a todos
     public synchronized void saludoJefe(Persona p){
         System.out.println(p.getNombre()+" Ha llegado");
         llegada = true;
