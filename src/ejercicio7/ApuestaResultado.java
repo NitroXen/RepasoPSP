@@ -17,12 +17,14 @@ public class ApuestaResultado {
     int importe;
     int numApuestas;
     
+    // inicializamos ApuestaResultado con un contructor entregando un String para resultado
     public ApuestaResultado(String resultado){
         this.resultado = resultado;
         this.importe = 0;
         this.numApuestas =0;
     }
     
+    //metodo sincronizado para incrementar el importe y el el num de apuestas
     public synchronized void apuesta(int importe){
         int importeHastaAhora= this.importe;
         try{

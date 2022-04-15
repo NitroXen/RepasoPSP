@@ -18,12 +18,15 @@ public class Empleado extends Thread{
     Bote bote;
     HashMap<String, ApuestaResultado> apuestas;
     
+    //constructor al que le damos el nombre y la clase bote para el hilo
     public Empleado(String nombre, Bote bote){
         super(nombre);
         this.bote = bote;
         apuestas = new HashMap<>();
     }
     
+    
+    //en el motodo run sobrecargado que gestiona el tema de las apuestas
     @Override
     public void run(){
         for(int i =0;i<NUM_APUESTAS;i++){
@@ -42,6 +45,8 @@ public class Empleado extends Thread{
         }
     }
     
+    //metodo de la clase ApuestaResultado que devuevle en el
+    //hashmap la apuesta ganadora del partido
     public ApuestaResultado getApuestaGanadora(String resultado){
         return apuestas.get(resultado);
     }

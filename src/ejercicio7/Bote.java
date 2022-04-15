@@ -20,6 +20,9 @@ public class Bote {
     
     private HashMap<String, ApuestaResultado> apuestas;
     
+    
+    //el constructor Bote sin darle nada inicializa un
+    //hashmap de apuestas con String y Apuesta Resultado
     public Bote(){
         apuestas = new HashMap<>();
         for(int golesLocal=0;golesLocal<MAX_GOLES;golesLocal++){
@@ -29,24 +32,31 @@ public class Bote {
             }   
         }
     }
+    
+    //damos al hashmap apropiado la apuesta
     public void apuesta(String resultado, int importe){
         apuestas.get(resultado).apuesta(importe);
     }
     
+    //devolvemos el punto de la apuesta del hashmap
     public ApuestaResultado getApuesta(String resultado){
         return apuestas.get(resultado);
     }
     
+    //metodo estatico de nivel devoucion de String
+    //que muestra los goles que marcaron los equipos en el partido
     public static String getFormatoApuesta(int golesLocal, int golesVisitante){
         return golesLocal +" - " + golesVisitante;
     }
     
+    //metodo estatico que genera los goles de los equipos
     public static String getFormatoApuesta(){
         int golesLocal=r.nextInt(MAX_GOLES);
         int golesVisitante = r.nextInt(MAX_GOLES);
         return Bote.getFormatoApuesta(golesLocal, golesVisitante);
     }
     
+    //metodo entero que devuelve la recaudacion de la apuesta
     public int getRecaudacion(){
         int recaudacion=0;
         for(Map.Entry<String , ApuestaResultado> entry:apuestas.entrySet()){
