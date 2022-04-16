@@ -14,11 +14,11 @@ public class Main {
     public static void main(String[] args) {
         int NUM_CLIENTES = 10;
         
-        R r = new R(15);
+        R r = new R(5);
         
         
         for(int i = 0; i<NUM_CLIENTES;i++){
-            new Cliente(r).start();
+            new Cliente("Cli"+(i+1),r).start();
             try{Thread.sleep(500);}catch(InterruptedException ex){}
         }
     }
