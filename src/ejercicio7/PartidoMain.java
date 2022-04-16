@@ -13,13 +13,13 @@ import java.util.ArrayList;
  */
 public class PartidoMain {
     
-    static final int NUM_EMPLEADOS = 3;
+    static final int NUM_EMPLEADOS = 5;
     
     public static void main(String[] args) {
         Bote b = new Bote();
         ArrayList<Empleado> listaEmpleados = new ArrayList<>();
         
-        for(int i =0;i<NUM_EMPLEADOS;i++)listaEmpleados.add(new Empleado("E"+i, b));
+        for(int i =0;i<NUM_EMPLEADOS;i++)listaEmpleados.add(new Empleado("E"+(i+1), b));
         
         for(Empleado e: listaEmpleados)e.start();
         

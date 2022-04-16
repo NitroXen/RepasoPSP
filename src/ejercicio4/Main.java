@@ -21,7 +21,7 @@ public class Main {
             if(i == cuandoLlegaElJefe){
                 new Jefe("Jefe", o).start();
             }else{
-                new Empleado(""+(i<cuandoLlegaElJefe?i:i-1), o).start();
+                new Empleado("E"+(i<cuandoLlegaElJefe?i:i-1), o).start();
             }
         }
     }

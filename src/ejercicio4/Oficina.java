@@ -19,11 +19,11 @@ public class Oficina {
     public synchronized void saludoEmpleado(Persona p){
         System.out.println(p.getNombre()+" Ha llegado");
         if(!llegada){
-            System.out.println("ZZZZZZZZZZZZZZZZZZ");
+            System.out.println("\tZZZZZZZZZZZZZZZZZZ");
             try{wait();}catch(InterruptedException ex){}
-            System.out.println("Eh, A Trabajar");
+            System.out.println("\t"+p.getNombre()+": Eh, A Trabajar");
         }else{
-            System.out.println(p.getNombre()+": ya me pongo a trabajar");
+            System.out.println("\tya me pongo a trabajar");
         }
         
     }
