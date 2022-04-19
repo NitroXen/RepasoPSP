@@ -33,7 +33,7 @@ public class Main {
         }
         
         Partido ganador = null;
-        int totalVotos = 0, maxVotos= -1;
+        int totalVotos = 0, maxVotos = -1;
         boolean empate = false;
         for(Partido p : partidos){
             int numVotos = p.totalVotos();
@@ -41,16 +41,16 @@ public class Main {
                 empate = true;
             }else{
                 if(numVotos > maxVotos){
-                    empate = false;
-                    ganador = p;
-                    maxVotos = numVotos;
+                empate = false;
+                ganador = p;
+                maxVotos = numVotos;
                 }
             }
             totalVotos += numVotos;
-            System.out.println(p.getNombre()+">>"+p.totalVotos());
+            System.out.println(p.getNombre()+">>"+numVotos);
         }
-        System.out.println("Total Votos: "+totalVotos);
-        System.out.println(empate?"EMPATE = RECUENTO":"GANADOR = "+ ganador.getNombre());
+        System.out.println("Num de votantes:"+ totalVotos);
+        System.out.println(empate?"EMPATE => RECUENTO":"GANADOR => "+ganador.getNombre());
         
     }
 }

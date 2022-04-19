@@ -32,15 +32,14 @@ public class PartidoMain {
         
         ApuestaResultado apuestaGanadoras = b.getApuesta(resultadoPartido);
         int importeApuestaGanadoras = apuestaGanadoras.importe;
-        int numApuestasGanadoras=apuestaGanadoras.numApuestas;
-        System.out.printf("%d € a repartir entre %d apuestas\n",
-                importeApuestaGanadoras,numApuestasGanadoras);
+        int numApuestasGanadoras = apuestaGanadoras.numApuestas;
+        System.out.printf("%d € a repartir entre %d apuestas \n",importeApuestaGanadoras,numApuestasGanadoras);
         System.out.println(b);
-        System.out.println("total a repartir: "+b.getRecaudacion()+"€");
-        System.out.println("Ganadores: ");
-        for(Empleado e: listaEmpleados){
+        System.out.println("Total a Repartir: "+ b.getRecaudacion());
+        System.out.println("Ganadores:");
+        for(Empleado e:listaEmpleados){
             ApuestaResultado apuestaGanadora = e.getApuestaGanadora(resultadoPartido);
-            if(apuestaGanadora!=null){
+            if(apuestaGanadora != null){
                 int apuestaDelEmpleado = apuestaGanadora.importe;
                 int numApuestaDelEmpleado = apuestaGanadora.numApuestas;
                 float porcentajeGananciaEmpleado = (float)apuestaDelEmpleado/importeApuestaGanadoras;

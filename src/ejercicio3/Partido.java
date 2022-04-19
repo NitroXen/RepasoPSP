@@ -5,8 +5,6 @@
  */
 package ejercicio3;
 
-import java.util.Random;
-
 /**
  *
  * @author Admin
@@ -14,25 +12,25 @@ import java.util.Random;
 public class Partido {
     
     private String nombre;
-    private int votos;
+    private int numVotos;
     
     public Partido(String nombre){
         this.nombre = nombre;
-        votos =0;
+        numVotos = 0;
     }
     
-    public synchronized void incrementaVotos(){
-        int i = votos;
-        try{Thread.sleep(new Random().nextInt(5)+1);}catch(InterruptedException ex){}
-        votos = i+1;
+    public synchronized void incremento(){
+        int i = numVotos;
+        try{Thread.sleep(10);}catch(InterruptedException ex){}
+        numVotos = i+1;
     }
     
     public int totalVotos(){
-        return votos;
+        return numVotos;
     }
     
     public String getNombre(){
         return nombre;
     }
-    
+
 }
