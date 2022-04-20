@@ -13,26 +13,22 @@ import java.util.Random;
  */
 public class Libro {
     
-    private static int count = 0;
-    private int id;
     private String nombre;
     private double precio;
     
     public Libro(String nombre){
-        id = count++;
         this.nombre = nombre;
         
-        precio = (new Random().nextDouble()*22)+1;
         
+        
+        precio = (new Random().nextDouble()*22)+1;
     }
     
     public String getNombre(){
         return nombre;
     }
     
-    public int getId(){
-        return id;
-    }
+
     
     public double getPrecio(){
         return precio;
@@ -40,7 +36,7 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "Libro{" + "id=" + id + ", nombre=" + nombre + "}";
+        return "Libro{" +" nombre=" + nombre + "}";
     }
     
     

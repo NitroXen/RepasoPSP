@@ -25,6 +25,8 @@ public class Cliente extends Thread {
         try{Thread.sleep(1000);}catch(InterruptedException ex){}
         if(l != null){
             Libreria.getInstancia().retirarLibro(l);
+        }else{
+            System.out.println("El libro seleccionado no esta");
         }
     }
     

@@ -14,6 +14,7 @@ public class Main {
     public static void main(String[] args) {
         final int NUM_LIBROS = 200;
         final int NUM_CLIENTES = 50;
+        int numVentas = 0;
         
         Cliente[] clientes = new Cliente[NUM_CLIENTES];
         
@@ -22,13 +23,15 @@ public class Main {
         for(int i=0;i<NUM_CLIENTES;i++){
             clientes[i] = new Cliente("C"+i);
             clientes[i].start();
+            numVentas++;
         }
         
         
         for(Cliente c: clientes)try{c.join();}catch(InterruptedException ex){}
         
         System.out.println("Num de Libros en total: "+ Libreria.getInstancia().numLibrosEnLibreria());
-        System.out.printf("Num de ganancias: %.2f €",Libreria.getInstancia().getGanancias());
+        System.out.println("Num de Ventas: " + numVentas);
+        System.out.printf("Num de ganancias: %.2f €\n",Libreria.getInstancia().getGanancias());
     }
     
 }
