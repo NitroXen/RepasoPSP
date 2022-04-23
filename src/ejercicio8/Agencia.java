@@ -16,20 +16,26 @@ public class Agencia {
     private static Agencia instancia = null;
     private final ArrayList<Meteorito> listaMeteoritos;
     
+    //el constructor es privado para instanciarlo con un metodo estatico
     private Agencia(){listaMeteoritos = new ArrayList<>();}
     
+    //declaracion de instancia estatico para inicializar la clase Agencia
     public static Agencia getInstancia(){
         if(instancia == null) instancia= new Agencia();
         return instancia;
     }
     
+    //la agencia añade meteoritos a su base de datos tras la llegada a la tierra
     public void addMeteorito(Meteorito m){
         listaMeteoritos.add(m);
     }
+    
+    //Se comprueba que haya meteoritos
     public boolean hayMeteoritos(){
         return !listaMeteoritos.isEmpty();
     }
     
+    //La agencia taladra meteoritos
     public void taladrar(){
         Meteorito m;
         synchronized(listaMeteoritos){
@@ -40,6 +46,7 @@ public class Agencia {
         m.taladrar();
     }
     
+    //la agencia explota meteoritos
     public void BOOM(){
         synchronized(listaMeteoritos){
             if(listaMeteoritos.isEmpty())return;

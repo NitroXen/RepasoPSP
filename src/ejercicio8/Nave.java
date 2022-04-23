@@ -11,12 +11,16 @@ package ejercicio8;
  */
 public abstract class Nave extends Thread {
     
+    //el constructor que sobrecarga el construtor de Thread para ponerle un nombre
     public Nave(String name){
         super(name);
     }
     
+    //la funcion abstracta para Run()
     public abstract void aPorEl();
     
+    
+    //la funcion Sobrecargada Run() declarando por Agencia si hay meteoritos entonces ejecutar la funcion abstracta
     @Override
     public void run(){
         System.out.println(this + ": Despegando");
