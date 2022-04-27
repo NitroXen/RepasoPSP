@@ -16,6 +16,7 @@ public class Servidor {
     public static void main(String[] args) {
         try{
             ServerSocket ss = new ServerSocket(7);
+            System.out.println("Servidor Online");
             Socket s = ss.accept();
             DataInputStream in = new DataInputStream(s.getInputStream());
             DataOutputStream out = new DataOutputStream(s.getOutputStream());

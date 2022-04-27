@@ -20,9 +20,7 @@ public class Partido {
     }
     
     public synchronized void incremento(){
-        int i = numVotos;
-        try{Thread.sleep(10);}catch(InterruptedException ex){}
-        numVotos = i+1;
+        numVotos++;
     }
     
     public int totalVotos(){

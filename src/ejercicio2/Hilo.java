@@ -13,23 +13,16 @@ import java.util.logging.Logger;
  * @author Admin
  */
 public class Hilo extends Thread {
-    
+
     Contador c;
-    
-    
-    public Hilo(Contador c){
+
+    public Hilo(Contador c) {
         this.c = c;
     }
-    
-    
+
     @Override
-    public void run(){
+    public void run() {
         c.incremento();
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Hilo.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
-    
+
 }

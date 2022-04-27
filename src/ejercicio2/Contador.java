@@ -17,9 +17,7 @@ public class Contador {
     }
     
     public synchronized void incremento(){
-        int num = cuenta;
-        try{Thread.sleep(5);}catch(InterruptedException ex){}
-        cuenta = num+1;
+        cuenta++;
     }
     
     public int getCuenta(){

@@ -24,6 +24,17 @@ public class Prueba {
     }
 }
 
+
+/*
+Esto es una locura que he hecho para la ciencia de la computacion
+Ejecutando esto en NetBeans me dice que tiene dos Mains y que -
+quiere que ejecute uno de ellos
+
+------------ES DE LOCOS------------
+
+*/
+
+
 class Cli{
     public static void main(String[] args) {
         try{
