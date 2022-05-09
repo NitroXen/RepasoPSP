@@ -39,7 +39,7 @@ public class Recinto{
                 wait();
             }catch(InterruptedException e){}
         }
-        iLibre.inFan(f);
+        iLibre.firma(f);
     }
      public synchronized void fanOut(Fans f){
          notify();

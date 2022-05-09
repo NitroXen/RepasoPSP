@@ -26,7 +26,7 @@ public class Integrante {
 
     }
     
-    public void inFan(Fans f){
+    public synchronized void firma(Fans f){
         fan = f;
         System.out.println(f+">>"+this);
         if(firmas<maxFirmas){firmas++;

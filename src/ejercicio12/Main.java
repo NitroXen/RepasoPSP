@@ -14,33 +14,42 @@ public class Main {
     public static void main(String[] args) {
         final int NUM_INTEGRANTES = 5;
         final int NUM_FIRMAS_INTEGRANTE = 40;
-        final int NUM_FANS = 100;
+        final int NUM_FANS = 400;
         
+        int numFirmados= 0;
+        int numNoFirmados = 0;
         
         Integrante[] banda = new Integrante[NUM_INTEGRANTES];
         
         for(int i =0;i< NUM_INTEGRANTES;i++){
             banda[i] = new Integrante(NUM_FIRMAS_INTEGRANTE);
         }
-        
-        Recinto r = new Recinto(banda);
+//        
+//        Recinto r = new Recinto(banda);
         Fans[] fans = new Fans[NUM_FANS];
-        
-        
-        for(int i =0; i<NUM_FANS;i++){
-            fans[i] = new Fans(r);
+//        
+//        
+//        for(int i =0; i<NUM_FANS;i++){
+//            fans[i] = new Fans(r);
+//            fans[i].start();
+//        }
+//        
+        for(int i = 0;i<NUM_FANS;i++){
+            fans[i] = new Fans(banda);
             fans[i].start();
         }
-        
         for(Fans f:fans){
             try{f.join();}catch(InterruptedException e){}
         }
-        
         System.out.println("--------------------------------------");
         
-        r.cuentaSin();
-        r.cuenta();
+        for(Integrante i:banda){
+            numFirmados+=i.getFirma();
+            numNoFirmados+=i.getSinFirma();
+        }
         
+        System.out.println("Firmados: " + numFirmados);
+        System.out.println("No Firmados: "+ numNoFirmados);
     }
     
 }

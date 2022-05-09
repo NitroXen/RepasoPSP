@@ -5,6 +5,8 @@
  */
 package ejercicio12;
 
+import java.util.Random;
+
 /**
  *
  * @author Admin
@@ -15,21 +17,23 @@ public class Fans extends Thread {
     private static int cuenta =0;
     private int num;
     private Recinto recinto;
+    private Integrante[] banda;
     
-    public Fans( Recinto r){
+    public Fans(Recinto r){
         num = cuenta++;
         recinto = r;
     }
     
-    @Override
-    public void run(){
-        recinto.fanIn(this);
-        try{Thread.sleep(100);}catch(InterruptedException e){}
-        recinto.fanOut(this);
+    public Fans(Integrante[] banda){
+        this.banda = banda;
     }
     
-    
-    
+    @Override
+    public void run(){
+        int i = new Random().nextInt(banda.length);
+        banda[i].firma(this);
+    }
+
     @Override
     public String toString(){
         return "FAN "+num;
